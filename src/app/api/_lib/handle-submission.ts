@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server';
+import { Resend } from 'resend';
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 interface SubmissionOptions {
   formName: string;
@@ -65,6 +67,22 @@ export async function handleSubmission(
       receivedAt: submission.receivedAt,
       fields: Object.keys(body),
     });
+  }
+    try {
+    await resend.emails.send({
+      from: 'Baytown Open MRI <onboarding@resend.dev>',
+      to: process.env.APPOINTMENT_EMAIL!,
+      subject: `New ${formName} submission`,
+      html: `
+        <h2>New Appointment Request</h2>
+        <p><strong>First Name:</strong> ${body.firstName || ''}</p>
+        <p><strong>Last Name:</strong> ${body.lastName || ''}</p>
+        <p><strong>Phone:</strong> ${body.phone || ''}</p>
+        <p><strong>Email:</strong> ${body.email || ''}</p>
+      `,
+    });
+  } catch (err) {
+    console.error('Email send failed', err);
   }
 
   return NextResponse.json({ ok: true });
