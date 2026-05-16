@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     'ACR-accredited Open MRI in Baytown, TX. Affordable self-pay pricing, same-day scheduling, and same-day reports available. Open MRI is comfortable for claustrophobic patients.',
   keywords: [
     'MRI Baytown',
+    'MRI',
     'Open MRI Baytown',
     'MRI near me',
     'Baytown MRI',
@@ -43,6 +44,9 @@ export const metadata: Metadata = {
     'PI MRI imaging',
     'LOP MRI',
   ],
+  verification: {
+  google: "JNi7gUZI3R5fxlTBLYVfBuK9GwBUbD8VS-qdNUW8Vk4",
+},
   authors: [{ name: BUSINESS.name }],
   creator: BUSINESS.name,
   publisher: BUSINESS.name,
