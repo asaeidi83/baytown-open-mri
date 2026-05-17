@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Hero } from '@/components/sections/hero';
+import { Location } from '@/components/sections/location';
 import { Advantages } from '@/components/sections/advantages';
 import { OpenMriBenefits } from '@/components/sections/open-mri-benefits';
 import { ServicesPreview } from '@/components/sections/services-preview';
@@ -22,6 +23,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <Location />
       <Advantages />
       <OpenMriBenefits />
       <ServicesPreview />

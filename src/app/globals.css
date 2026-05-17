@@ -63,4 +63,67 @@
       linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
     background-size: 28px 28px;
   }
+
+  /* Tasteful motion — reduced motion users get instant reveal */
+  .motion-fade-up {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .motion-fade {
+    opacity: 0;
+    animation: fade-in 0.9s ease-out forwards;
+  }
+  .motion-delay-100 { animation-delay: 0.1s; }
+  .motion-delay-200 { animation-delay: 0.2s; }
+  .motion-delay-300 { animation-delay: 0.3s; }
+  .motion-delay-400 { animation-delay: 0.4s; }
+  .motion-delay-500 { animation-delay: 0.5s; }
+
+  @keyframes fade-up {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-in {
+    to { opacity: 1; }
+  }
+
+  /* Slow ambient pulse for the imaging-ring glow behind the hero */
+  .motion-pulse-glow {
+    animation: pulse-glow 6s ease-in-out infinite;
+  }
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.55; transform: scale(1); }
+    50% { opacity: 0.85; transform: scale(1.03); }
+  }
+
+  /* Subtle shimmer on image overlay */
+  .motion-shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.08) 50%,
+      transparent 70%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motion-fade-up,
+    .motion-fade,
+    .motion-pulse-glow,
+    .motion-shimmer::after {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
 }
