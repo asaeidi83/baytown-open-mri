@@ -24,7 +24,7 @@ export function Location() {
               <div className="relative overflow-hidden rounded-[1.4rem] bg-slate-100 ring-1 ring-slate-200/80 shadow-[0_20px_60px_-15px_rgba(15,23,42,0.25)]">
                 <div className="relative aspect-[5/4]">
                   <Image
-                    src="/images/clinic-exterior.png"
+                    src="/images/clinic-exterior.png.PNG"
                     alt="The Baytown Open MRI clinic building exterior at 4310 Garth Rd, Baytown, TX."
                     fill
                     sizes="(min-width: 1024px) 560px, 100vw"

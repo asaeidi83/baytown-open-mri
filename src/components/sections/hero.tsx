@@ -141,7 +141,7 @@ function ImagingFrame() {
       <div className="relative overflow-hidden rounded-[1.4rem] bg-slate-100 ring-1 ring-slate-200/80 shadow-[0_20px_60px_-15px_rgba(15,23,42,0.25)] motion-shimmer">
         <div className="relative aspect-[4/5] sm:aspect-[5/6] lg:aspect-[4/5]">
           <Image
-            src="/images/open-mri-room.png"
+            src="/images/open-mri-room.png.png"
             alt="The Open MRI scanner suite at Baytown Open MRI, designed for patient comfort."
             fill
             priority
