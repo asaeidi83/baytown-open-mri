@@ -79,6 +79,11 @@ export async function handleSubmission(
         <p><strong>Last Name:</strong> ${body.lastName || ''}</p>
         <p><strong>Phone:</strong> ${body.phone || ''}</p>
         <p><strong>Email:</strong> ${body.email || ''}</p>
+        <p><strong>Study Requested:</strong> ${body.study || ''}</p>
+        <p><strong>Payment / Case Type:</strong> ${body.caseType || ''}</p>
+        <p><strong>Referring Provider:</strong> ${body.referringProvider || ''}</p>
+        <p><strong>Preferred Day or Time:</strong> ${body.preferredTime || ''}</p>
+        <p><strong>Notes:</strong> ${body.message || body.notes || ''}</p>
       `,
     });
   } catch (err) {
