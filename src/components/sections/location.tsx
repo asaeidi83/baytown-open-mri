@@ -72,13 +72,13 @@ export function Location() {
                 icon={Phone}
                 title="Call us"
                 primary={BUSINESS.phone}
-                secondary="Mon–Fri · 8 AM – 5 PM"
+                secondary="Mon–Fri · 8 AM – 4 PM"
                 href={telHref(BUSINESS.phone)}
               />
               <InfoCard
                 icon={Clock}
                 title="Hours"
-                primary="Mon – Fri · 8 AM – 5 PM"
+                primary="Mon – Fri · 8 AM – 4 PM"
                 secondary="Saturday by appointment"
               />
               <InfoCard

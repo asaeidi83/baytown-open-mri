@@ -180,9 +180,9 @@ function ImagingFrame() {
                 </p>
               </div>
               <div className="mt-3 grid grid-cols-3 gap-3 text-center">
-                <Stat label="Open MRI" value="Patient-friendly" />
+                <Stat label="Open MRI" value="Claustrophobic-friendly" />
                 <Stat label="Reports" value="Same-day" />
-                <Stat label="Comfort" value="Claustrophobic-friendly" />
+                <Stat label="Insurance" value="Most major plans" />
               </div>
             </div>
           </div>
