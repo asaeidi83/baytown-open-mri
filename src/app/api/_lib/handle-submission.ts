@@ -73,18 +73,27 @@ export async function handleSubmission(
       from: 'Baytown Open MRI <appointments@baytownopenmri.com>',
       to: process.env.APPOINTMENT_EMAIL!,
       subject: `New ${formName} submission`,
-      html: `
-        <h2>New Appointment Request</h2>
-        <p><strong>First Name:</strong> ${body.firstName || ''}</p>
-        <p><strong>Last Name:</strong> ${body.lastName || ''}</p>
-        <p><strong>Phone:</strong> ${body.phone || ''}</p>
-        <p><strong>Email:</strong> ${body.email || ''}</p>
-        <p><strong>Study Requested:</strong> ${body.study || ''}</p>
-        <p><strong>Payment / Case Type:</strong> ${body.caseType || ''}</p>
-        <p><strong>Referring Provider:</strong> ${body.referringProvider || ''}</p>
-        <p><strong>Preferred Day or Time:</strong> ${body.preferredTime || ''}</p>
-        <p><strong>Notes:</strong> ${body.message || body.notes || ''}</p>
-      `,
+      html: formName === 'contact'
+  ? `
+    <h2>New Contact Submission</h2>
+    <p><strong>Full Name:</strong> ${body.name || body.fullName || ''}</p>
+    <p><strong>Phone:</strong> ${body.phone || ''}</p>
+    <p><strong>Email:</strong> ${body.email || ''}</p>
+    <p><strong>Subject:</strong> ${body.subject || ''}</p>
+    <p><strong>Message:</strong> ${body.message || ''}</p>
+  `
+  : `
+    <h2>New Appointment Request</h2>
+    <p><strong>First Name:</strong> ${body.firstName || ''}</p>
+    <p><strong>Last Name:</strong> ${body.lastName || ''}</p>
+    <p><strong>Phone:</strong> ${body.phone || ''}</p>
+    <p><strong>Email:</strong> ${body.email || ''}</p>
+    <p><strong>Study Requested:</strong> ${body.study || ''}</p>
+    <p><strong>Payment / Case Type:</strong> ${body.caseType || ''}</p>
+    <p><strong>Referring Provider:</strong> ${body.referringProvider || ''}</p>
+    <p><strong>Preferred Day or Time:</strong> ${body.preferredTime || ''}</p>
+    <p><strong>Notes:</strong> ${body.message || body.notes || ''}</p>
+  `,
     });
   } catch (err) {
     console.error('Email send failed', err);
