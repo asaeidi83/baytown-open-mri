@@ -70,7 +70,7 @@ export async function handleSubmission(
   }
     try {
     await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>',
+      from: 'Baytown Open MRI <appointments@baytownopenmri.com>',
       to: process.env.APPOINTMENT_EMAIL!,
       subject: `New ${formName} submission`,
       html: `
