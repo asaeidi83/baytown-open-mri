@@ -39,7 +39,7 @@ export function Hero() {
                 aria-hidden="true"
                 className="h-px w-8 sm:w-10 bg-gradient-to-r from-primary-600 to-teal-500"
               />
-              <p className="text-base sm:text-lg md:text-xl font-extrabold uppercase leading-none tracking-[0.22em] bg-gradient-to-r from-primary-700 via-primary-600 to-teal-600 bg-clip-text text-transparent">
+              <p className="text-lg sm:text-xl md:text-2xl font-black uppercase leading-none tracking-[0.22em] bg-gradient-to-r from-primary-700 via-primary-600 to-teal-600 bg-clip-text text-transparent">
                 Baytown Open MRI
               </p>
             </div>
