@@ -33,7 +33,18 @@ export function Hero() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Copy column */}
           <div className="lg:col-span-6 xl:col-span-6">
-            <div className="motion-fade-up">
+            {/* Premium brand wordmark — primary visual anchor */}
+            <div className="motion-fade-up mb-5 flex items-center gap-3">
+              <span
+                aria-hidden="true"
+                className="h-px w-8 sm:w-10 bg-gradient-to-r from-primary-600 to-teal-500"
+              />
+              <p className="text-base sm:text-lg md:text-xl font-extrabold uppercase leading-none tracking-[0.22em] bg-gradient-to-r from-primary-700 via-primary-600 to-teal-600 bg-clip-text text-transparent">
+                Baytown Open MRI
+              </p>
+            </div>
+
+            <div className="motion-fade-up motion-delay-100">
               <Badge variant="teal" className="mb-5 px-3 py-1 text-[11px] tracking-wide">
                 <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-teal-500" />
                 ACR ACCREDITED · OPEN MRI · BAYTOWN, TX
